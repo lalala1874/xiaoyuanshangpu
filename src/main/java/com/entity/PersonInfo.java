@@ -1,4 +1,4 @@
-package entity;
+package com.entity;
 
 import java.util.Date;
 //个人信息

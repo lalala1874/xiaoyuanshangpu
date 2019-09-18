@@ -1,6 +1,4 @@
-package entity;
-
-import org.omg.CORBA.PRIVATE_MEMBER;
+package com.entity;
 
 import java.util.Date;
 
@@ -13,7 +11,7 @@ public class Shop {
     private  String shopImg;
     private  Integer priority;
     private  Date createTime;
-    private  Date lasgEditTime;
+    private  Date lastEditTime;
     private  Integer enableStatus;//-1 不可用 0 审核 1可用
     private  String advice;//提醒
     private  Area area;
@@ -32,7 +30,7 @@ public class Shop {
         this.shopImg = shopImg;
         this.priority = priority;
         this.createTime = createTime;
-        this.lasgEditTime = lasgEditTime;
+        this.lastEditTime = lasgEditTime;
         this.enableStatus = enableStatus;
         this.advice = advice;
         this.area = area;
@@ -105,11 +103,11 @@ public class Shop {
     }
 
     public Date getLasgEditTime() {
-        return lasgEditTime;
+        return lastEditTime;
     }
 
     public void setLasgEditTime(Date lasgEditTime) {
-        this.lasgEditTime = lasgEditTime;
+        this.lastEditTime = lasgEditTime;
     }
 
     public Integer getEnableStatus() {

@@ -1,6 +1,6 @@
-package dao;
+package com.dao;
 
-import entity.Area;
+import com.entity.Area;
 
 import java.util.List;
 
@@ -10,4 +10,8 @@ public interface AreaDao {
      * @return
      */
     List<Area> queryArea();
+
+
+
+
 }

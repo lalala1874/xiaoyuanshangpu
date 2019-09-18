@@ -1,4 +1,4 @@
-package entity;
+package com.entity;
 
 import java.util.Date;
 //区域信息
@@ -59,5 +59,16 @@ public class Area {
 
     public void setLastEditTime(Date lastEditTime) {
         this.lastEditTime = lastEditTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Area{" +
+                "areaId=" + areaId +
+                ", areaName='" + areaName + '\'' +
+                ", priority=" + priority +
+                ", createTime=" + createTime +
+                ", lastEditTime=" + lastEditTime +
+                '}';
     }
 }
