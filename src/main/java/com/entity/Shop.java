@@ -19,6 +19,27 @@ public class Shop {
     private  ShopCategory shopCategory;
 
     public Shop() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Shop{" +
+                "shopId=" + shopId +
+                ", shopName='" + shopName + '\'' +
+                ", shopDesc='" + shopDesc + '\'' +
+                ", shopAddr='" + shopAddr + '\'' +
+                ", phone='" + phone + '\'' +
+                ", shopImg='" + shopImg + '\'' +
+                ", priority=" + priority +
+                ", createTime=" + createTime +
+                ", lastEditTime=" + lastEditTime +
+                ", enableStatus=" + enableStatus +
+                ", advice='" + advice + '\'' +
+                ", area=" + area +
+                ", owner=" + owner +
+                ", shopCategory=" + shopCategory +
+                '}';
     }
 
     public Shop(Long shopId, String shopName, String shopDesc, String shopAddr, String phone, String shopImg, Integer priority, Date createTime, Date lasgEditTime, Integer enableStatus, String advice, Area area, PersonInfo owner, ShopCategory shopCategory) {

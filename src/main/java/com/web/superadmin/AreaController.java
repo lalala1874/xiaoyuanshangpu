@@ -37,7 +37,7 @@ public class AreaController {
             modelMap.put("success",false);
             modelMap.put("errMg",e.toString());
         }
-        logger.error("test.test error");
+
         Long endTime=System.currentTimeMillis();
         logger.debug("constTime:[{}ms]",endTime-startTime);
         logger.info("===end===");

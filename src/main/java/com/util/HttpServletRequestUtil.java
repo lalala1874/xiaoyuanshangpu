@@ -41,22 +41,21 @@ public static Long getLong(HttpServletRequest request,String key){
             return  false;
         }
     }
-    public static String getString(HttpServletRequest request,String key){
+
+    public static String getString(HttpServletRequest request, String key) {
         try {
-            String result=request.getParameter(key);
-            if (result!=null){
-                result=result.trim();
+            String result = request.getParameter(key);
+            if (result != null) {
+                result = result.trim();
             }
-            if ("".equals(result)){
-                return null;
+            if ("".equals(result)) {
+                result = null;
             }
-            return  result;
-        }catch (Exception e)
-        {
+            return result;
+        } catch (Exception e) {
             return null;
         }
     }
-
 
 
 
