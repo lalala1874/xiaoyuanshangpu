@@ -1,0 +1,16 @@
+2019-09-14 16:03:55.762 [main] ERROR com.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-09-14 16:09:19.852 [main] ERROR com.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-09-14 16:10:30.196 [main] ERROR com.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-09-14 16:11:39.042 [main] ERROR com.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-09-14 16:15:20.295 [main] ERROR com.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-09-14 16:17:46.026 [main] ERROR com.util.ImageUtil - java.io.FileNotFoundException: D:\图片空间\D:\图片空间\2019091416174527678.jpg (文件名、目录名或卷标语法不正确。)
+2019-09-14 16:19:23.393 [main] ERROR com.util.ImageUtil - java.io.FileNotFoundException: D:\图片空间\D:\图片空间\2019091416192319205.jpg (文件名、目录名或卷标语法不正确。)
+2019-09-14 16:20:24.044 [main] ERROR com.util.ImageUtil - java.io.FileNotFoundException: D:\图片空间\D:\图片空间\2019091416202335601.jpg (文件名、目录名或卷标语法不正确。)
+2019-09-14 16:31:10.138 [main] ERROR com.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-09-14 16:33:35.759 [main] ERROR com.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-09-14 16:35:38.036 [main] ERROR com.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-09-14 16:42:44.766 [main] ERROR com.util.ImageUtil - java.io.FileNotFoundException: D:\图片空间\D:\图片空间\2019091416424492242.jpg (文件名、目录名或卷标语法不正确。)
+2019-09-14 17:07:03.105 [main] ERROR com.util.ImageUtil - java.io.FileNotFoundException: D:\图片空间\upload\item\shop\20\2019091417070240393.jpg (系统找不到指定的路径。)
+2019-09-14 17:07:35.234 [main] ERROR com.util.ImageUtil - java.io.FileNotFoundException: D:\图片空间\upload\item\shop\21\2019091417073418542.jpg (系统找不到指定的路径。)
+2019-09-14 17:12:55.490 [main] ERROR com.util.ImageUtil - java.io.FileNotFoundException: D:\图片空间\upload\item\shop\22\2019091417125545322.jpg (系统找不到指定的路径。)
+2019-09-14 17:14:00.277 [main] ERROR com.util.ImageUtil - java.io.FileNotFoundException: D:\图片空间\upload\item\shop\23\2019091417135938007.jpg (系统找不到指定的路径。)
