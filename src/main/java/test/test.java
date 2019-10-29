@@ -1,12 +1,10 @@
 package test;
 
+import com.dao.ProductCategoryDao;
 import com.dao.ShopCategoryDao;
 import com.dao.ShopDao;
 import com.dto.ShopExecution;
-import com.entity.Area;
-import com.entity.PersonInfo;
-import com.entity.Shop;
-import com.entity.ShopCategory;
+import com.entity.*;
 import com.enums.ShopStateEnum;
 import com.service.ShopService;
 import org.junit.Ignore;
@@ -20,6 +18,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -27,19 +26,14 @@ import java.util.List;
 @ContextConfiguration({"classpath:spring/spring-dao.xml","classpath:spring/spring-service.xml"})
 public class test {
     @Autowired
-    private ShopCategoryDao shopCategoryDao;
+    private ProductCategoryDao productCategoryDao;
     @Autowired
     private ShopService shopService;
     @Autowired
     private  ShopDao shopDao;
     @Test
     public void test1() {
-        Shop shop = new Shop();
-        Area a = new Area();
-        a.setAreaId(3);
-        shop.setArea(a);
-       List<Shop>shopList=shopDao.queryShopList(shop,1,2);
-       shopList.toString();
-        System.out.println(shopDao.queryShopCount(shop));
+     productCategoryDao.deleteProductCategory(1l,2l);
+
 
     }}

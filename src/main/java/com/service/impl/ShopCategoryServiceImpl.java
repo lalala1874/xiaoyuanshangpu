@@ -8,15 +8,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
-public class ShopCategoryServiceImol implements ShopCategoryService {
+public class ShopCategoryServiceImpl implements ShopCategoryService {
     @Autowired
     ShopCategoryDao shopCategoryDao;
+
     @Override
     public List<ShopCategory> getShopCategoryList(ShopCategory shopCategoryCondition) {
-
-
-
         return shopCategoryDao.queryShopCategory(shopCategoryCondition);
     }
 }
