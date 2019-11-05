@@ -47,6 +47,24 @@ public class ImageUtil {
         return relativeAddr;
     }
 
+
+    public static String generateNormalImg(ImageHolder thumbnail, String targetAddr) {
+        String realFileName = getRandomFileName();
+        String extension = getFileExtension(thumbnail.getImageName());
+        String relativeAddr = targetAddr + realFileName + extension;
+        makeDirPath(targetAddr);
+        File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
+        try {
+            Thumbnails.of(thumbnail.getImage()).size(337,640)
+                    .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("D:\\Java项目空间\\xiaoyuanshangpu\\1.png")), 0.25f)
+                    .outputQuality(0.8f).toFile(dest);
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error(e.toString());
+        }
+        return relativeAddr;
+    }
+
     public static File transferCommonsMultipartFiletoFile(CommonsMultipartFile file) {
 
         File file1 = new File(file.getOriginalFilename());

@@ -1,6 +1,7 @@
 package com.dto;
 
 import com.entity.Product;
+import com.enums.ProductStateEnum;
 
 import java.util.List;
 
@@ -13,7 +14,16 @@ public class ProductExecution {
 
     public ProductExecution() {
     }
+    public  ProductExecution(ProductStateEnum productStateEnum,Product product){
+        this.state=productStateEnum.getState();
+        this.stateInfo=productStateEnum.getStateInfo();
+        this.product=product;
+    }
+    public  ProductExecution(ProductStateEnum productStateEnum){
+        this.state=productStateEnum.getState();
+        this.stateInfo=productStateEnum.getStateInfo();
 
+    }
     public ProductExecution(int state, String stateInfo) {
         this.state = state;
         this.stateInfo = stateInfo;
@@ -21,6 +31,16 @@ public class ProductExecution {
 
     public ProductExecution(int state, String stateInfo, Product product) {
         this.state = state;
+        this.stateInfo = stateInfo;
+        this.product = product;
+    }
+
+    public ProductExecution(int state, Product product) {
+        this.state = state;
+        this.product = product;
+    }
+
+    public ProductExecution(String stateInfo, Product product) {
         this.stateInfo = stateInfo;
         this.product = product;
     }
