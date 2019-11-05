@@ -1,5 +1,6 @@
 package com.util;
 
+import com.dto.ImageHolder;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
 import org.slf4j.Logger;
@@ -29,14 +30,14 @@ public class ImageUtil {
      * @param targetAddr
      * @return 相对路径
      */
-    public static String generateThumbnail(InputStream thumbnailInputStream, String fileName, String targetAddr) {
-        String realFileName = getRandomFileName();//正确
-        String extension = getFileExtension(fileName);//正确
+    public static String generateThumbnail(ImageHolder thumbnail, String targetAddr) {
+        String realFileName = getRandomFileName();
+        String extension = getFileExtension(thumbnail.getImageName());
         String relativeAddr = targetAddr + realFileName + extension;
         makeDirPath(targetAddr);
         File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
         try {
-            Thumbnails.of(thumbnailInputStream).size(200, 200)
+            Thumbnails.of(thumbnail.getImage()).size(200, 200)
                     .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("D:\\Java项目空间\\xiaoyuanshangpu\\1.png")), 0.25f)
                     .outputQuality(0.8f).toFile(dest);
         } catch (IOException e) {

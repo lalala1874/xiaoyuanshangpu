@@ -1,5 +1,6 @@
 package com.web.shopadmin;
 
+import com.dto.ImageHolder;
 import com.dto.ShopExecution;
 import com.entity.Area;
 import com.entity.PersonInfo;
@@ -148,7 +149,7 @@ public class ShopManagementController {
 
     @RequestMapping(value = ("/registershop"), method = RequestMethod.POST)
     @ResponseBody
-    private Map<String, Object> registerShop(HttpServletRequest request) {
+    private Map<String, Object> registerShop(HttpServletRequest request) throws IOException {
 
         Map<String, Object> modleMap = new HashMap<>();
         if (!CodeUtil.checkVerifyCode(request)) {
@@ -161,6 +162,8 @@ public class ShopManagementController {
         String shopStr = HttpServletRequestUtil.getString(request, "shopStr");
         ObjectMapper objectMapper = new ObjectMapper();
         Shop shop = null;
+        ImageHolder imageHolder=null;
+
         try {
             shop = objectMapper.readValue(shopStr, Shop.class);
         } catch (Exception e) {
@@ -173,6 +176,7 @@ public class ShopManagementController {
         if (commonsMultipartResolver.isMultipart(request)) {
             MultipartRequest multipartRequest = (MultipartRequest) request;
             shopImg = (CommonsMultipartFile) multipartRequest.getFile("shopImg");
+
         } else {
             modleMap.put("success", false);
             modleMap.put("errMsg", "上传图片不能为空");
@@ -184,7 +188,8 @@ public class ShopManagementController {
             shop.setOwner(owner);
             ShopExecution shopExecution;
             try {
-                shopExecution = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                imageHolder=new ImageHolder(shopImg.getName(),shopImg.getInputStream());
+                shopExecution = shopService.addShop(shop,imageHolder);
                 if (shopExecution.getState() == ShopStateEnum.CHECK.getState()) {
                     modleMap.put("success", true);
                     List<Shop> shopList = (List<Shop>) request.getSession().getAttribute("shopList");
@@ -225,6 +230,7 @@ public class ShopManagementController {
         //1.接受并转化相应的参数，包括店铺信息以及图片信息
         String shopStr = HttpServletRequestUtil.getString(request, "shopStr");
         ObjectMapper objectMapper = new ObjectMapper();
+        ImageHolder imageHolder=null;
         Shop shop = null;
         try {
             shop = objectMapper.readValue(shopStr, Shop.class);
@@ -238,6 +244,7 @@ public class ShopManagementController {
         if (commonsMultipartResolver.isMultipart(request)) {
             MultipartRequest multipartRequest = (MultipartRequest) request;
             shopImg = (CommonsMultipartFile) multipartRequest.getFile("shopImg");
+
         }
         //2.修改店铺
         if (shop != null && shop.getShopId() != null) {
@@ -245,12 +252,12 @@ public class ShopManagementController {
             ShopExecution shopExecution = null;
             try {
                 if (shopImg == null) {
-                    shopExecution = shopService.modifyShop(shop, null, null);
+                    shopExecution = shopService.modifyShop(shop, null);
 
                 } else {
-                    shopExecution = shopService.modifyShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                    imageHolder=new ImageHolder(shopImg.getName(),shopImg.getInputStream());
+                    shopExecution = shopService.modifyShop(shop,imageHolder);
                 }
-
 
                 if (shopExecution.getState() == ShopStateEnum.SUCCESS.getState()) {
                     modleMap.put("success", true);
