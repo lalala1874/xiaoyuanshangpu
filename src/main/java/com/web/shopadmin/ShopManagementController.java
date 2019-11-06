@@ -91,11 +91,7 @@ public class ShopManagementController {
 
 
         }
-
-
-
-
-    return  modelMap;
+        return  modelMap;
     }
 
 

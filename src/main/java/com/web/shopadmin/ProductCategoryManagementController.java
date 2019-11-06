@@ -28,8 +28,6 @@ public class ProductCategoryManagementController {
     @RequestMapping(value = "/getproductcategorylist", method = RequestMethod.GET)
     @ResponseBody
     public Result<List<ProductCategory>> getProductCategoryList(HttpServletRequest request) {
-
-        Map<String, Object> modelMap = new HashMap<>();
         Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
         List<ProductCategory> productCategoryList = null;
         if (currentShop != null && currentShop.getShopId() > 0) {

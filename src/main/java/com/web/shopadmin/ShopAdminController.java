@@ -11,23 +11,28 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping(value = "shopadmin",method = RequestMethod.GET )
 public class ShopAdminController {
-@RequestMapping("/shopoperation")
-    public String shopoperation(){
 
-    return "shop/shopoperation";
+    @RequestMapping("/shopoperation")
+    public String shopoperation(){ return "shop/shopoperation"; }
 
-    }
     @RequestMapping("/shoplist")
     public  String shoplist(){
     return  "shop/shoplist";
     }
+
     @RequestMapping("/shopmanagement")
     public  String shopmanagement(){
         return  "shop/shopmanagement";
     }
-   @RequestMapping("/productcategorymanagement")
+
+    @RequestMapping("/productcategorymanagement")
     public String productcategorymanagement(){
     return "shop/productcategorymanagement";
    }
 
+    @RequestMapping(value = "/productoperation")
+    public String productOperation() {return "shop/productoperation"; }
+
+    @RequestMapping(value = "/productmanagement")
+    public String productManagement() {return "shop/productmanagement"; }
 }

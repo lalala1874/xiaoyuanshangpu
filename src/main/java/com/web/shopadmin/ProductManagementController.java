@@ -37,7 +37,7 @@ public class ProductManagementController {
     @Autowired
     ProductService productService;
 
-    @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
+    @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> addProduct(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();

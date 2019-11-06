@@ -68,7 +68,7 @@ public class ProductServiceImpl implements ProductService {
         }
         if (productImgList.size() > 0) {
             try {
-                int effectedNum = productImgDao.batchInsetProductImg(productImgList);
+                int effectedNum = productImgDao.batchInsertProductImg(productImgList);
                 if (effectedNum < 0) {
                     throw new ProductOperationException("详情图片错误");
                 }
