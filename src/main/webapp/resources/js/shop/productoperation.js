@@ -21,8 +21,7 @@ $(function() {
 
     // 获取需要编辑的商品的商品信息，并赋值给表单
     function getInfo(id) {
-        $
-            .getJSON(
+        $.getJSON(
                 infoUrl,
                 function(data) {
                     if (data.success) {

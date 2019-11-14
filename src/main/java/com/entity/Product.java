@@ -4,26 +4,19 @@ import java.util.Date;
 import java.util.List;
 
 public class Product {
-    private  Long productId; //
-    private  String productName;//
-    private  String productDesc;//
-    private  String imgAddr;//
-    private  String normalPrice;//
-    private  String promotionPrice;//
-    private  Integer priority;//
-    private  Date createTime;//
-    private  Date lastEditTime;//
-    private  Integer enableStatus;//
+    private Long productId; //
+    private String productName;//
+    private String productDesc;//
+    private String imgAddr;//
+    private String normalPrice;//
+    private String promotionPrice;//
+    private Integer priority;//
+    private Date createTime;//
+    private Date lastEditTime;//
+    private Integer enableStatus;//
     private List<ProductImg> productImgList;//
     private ProductCategory productCategory;//
-    private  Shop shop;//
-
-    public Product(Long productId) {
-        this.productId = productId;
-    }
-
-    public Product() {
-    }
+    private Shop shop;//
 
     public Long getProductId() {
         return productId;
@@ -97,12 +90,12 @@ public class Product {
         this.lastEditTime = lastEditTime;
     }
 
-    public Integer getEnabelStatus() {
+    public Integer getEnableStatus() {
         return enableStatus;
     }
 
-    public void setEnabelStatus(Integer enabelStatus) {
-        this.enableStatus = enabelStatus;
+    public void setEnableStatus(Integer enableStatus) {
+        this.enableStatus = enableStatus;
     }
 
     public List<ProductImg> getProductImgList() {
@@ -126,22 +119,6 @@ public class Product {
     }
 
     public void setShop(Shop shop) {
-        this.shop = shop;
-    }
-
-    public Product(Long productId, String productName, String productDesc, String imgAddr, String normalPrice, String promotionPrice, Integer priority, Date createTime, Date lastEditTime, Integer enabelStatus, List<ProductImg> productImgList, ProductCategory productCategory, Shop shop) {
-        this.productId = productId;
-        this.productName = productName;
-        this.productDesc = productDesc;
-        this.imgAddr = imgAddr;
-        this.normalPrice = normalPrice;
-        this.promotionPrice = promotionPrice;
-        this.priority = priority;
-        this.createTime = createTime;
-        this.lastEditTime = lastEditTime;
-        this.enableStatus = enabelStatus;
-        this.productImgList = productImgList;
-        this.productCategory = productCategory;
         this.shop = shop;
     }
 }

@@ -13,8 +13,19 @@ public interface ProductService {
 
     ProductExecution addProduct(Product product,
                                 ImageHolder thumbnail,
-                               List<ImageHolder> imageHolderList)
+                               List<ImageHolder>  productImgHolderList)
             throws ProductOperationException;
+    ProductExecution modifyProduct(Product product,
+                                   ImageHolder thumbnail,
+                                   List<ImageHolder>  productImgHolderList)throws ProductOperationException;
+
+
+
+    List<Product> getProductList(Product productCodition,int pageIndex,int pageSize);
+
+    Product getProductById(Long productId);
+
+
 
 
 }

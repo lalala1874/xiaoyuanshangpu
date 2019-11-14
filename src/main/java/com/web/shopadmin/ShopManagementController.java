@@ -251,7 +251,7 @@ public class ShopManagementController {
                     shopExecution = shopService.modifyShop(shop, null);
 
                 } else {
-                    imageHolder=new ImageHolder(shopImg.getName(),shopImg.getInputStream());
+                    imageHolder=new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream());
                     shopExecution = shopService.modifyShop(shop,imageHolder);
                 }
 
