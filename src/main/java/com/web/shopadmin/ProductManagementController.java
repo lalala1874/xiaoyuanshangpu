@@ -213,6 +213,45 @@ public class ProductManagementController {
     }
 
 
+
+
+    @RequestMapping(value = "getproductlist",method = RequestMethod.GET)
+    public Map<String,Object> getProductList(HttpServletRequest request){
+        Map<String,Object> modelMap=new HashMap<>();
+        int pageIndex=HttpServletRequestUtil.getInt(request,"pageIndex");
+        int pageSize=HttpServletRequestUtil.getInt(request,"pageSize");
+        Shop currentShop= (Shop) request.getSession().getAttribute("currentShop");
+        if ((pageIndex>-1) && (pageSize>-1) && (currentShop!=null)&& (currentShop.getShopId()!=null)){
+            Long productCategoryId=HttpServletRequestUtil.getLong(request,"productCategoryId");
+            String productName=HttpServletRequestUtil.getString(request,"productName");
+            Product productCondition=compactProductCondition(currentShop.getShopId(),productCategoryId,productName);
+            ProductExecution pe=productService.getProductList(productCondition,pageIndex,pageSize);
+            modelMap.put("success",true);
+            modelMap.put("productList",pe.getProductList());
+            modelMap.put("productCount",pe.getCount());
+        }else {
+            modelMap.put("success",false);
+            modelMap.put("errMsg","pageIndex pageSize shopId Empty");
+        }
+        return modelMap;
+    }
+  private Product compactProductCondition(Long shopId,Long productCategoryId,String productName){
+        Product productCondition=new Product();
+        Shop shop=new Shop();
+        shop.setShopId(shopId);
+        if (productCategoryId!=-1l){
+        ProductCategory productCategory=new ProductCategory();
+        productCategory.setProductCategoryId(productCategoryId);
+        productCondition.setProductCategory(productCategory);
+        }
+        if (productName!=null){
+            productCondition.setProductName(productName);
+        }
+
+
+        return productCondition;
+
+  }
 }
 
 
